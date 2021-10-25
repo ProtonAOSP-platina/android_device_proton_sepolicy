@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from Lineage
+# inherit from ProtonAOSP
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -16,20 +16,20 @@ endif
 endif
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/lineage/sepolicy/common/public
+    device/proton/sepolicy/common/public
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/lineage/sepolicy/common/private
+    device/proton/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/lineage/sepolicy/common/dynamic \
-    device/lineage/sepolicy/common/system
+    device/proton/sepolicy/common/dynamic \
+    device/proton/sepolicy/common/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/dynamic \
-    device/lineage/sepolicy/common/vendor
+    device/proton/sepolicy/common/dynamic \
+    device/proton/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/lineage/sepolicy/legacy-common/sepolicy.mk
+-include device/proton/sepolicy/legacy-common/sepolicy.mk
